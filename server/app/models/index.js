@@ -9,7 +9,7 @@ import PostModel from "../models/post.model.js";
  * MongoDB connection URL from environment variables
  * @constant {string}
  */
-const DB_URL = process.env.DB_URL;
+const DB_URL = process.env.MONGODB_URI;
 
 /**
  * Database configuration object

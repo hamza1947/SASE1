@@ -16,8 +16,15 @@ export const authController = {
   signUp: async (req, res) => {
     // Destructure required fields from the request body
     const { firstName, lastName, email, password, role } = req.body;
-
+    // console.log("SignUp action called with:", {
+    //   firstName,
+    //   lastName,
+    //   email,
+    //   password,
+    //   role,
+    // });
     try {
+      // For debugging purposes
       // Validation: Ensure all required fields are provided
       if (!firstName || !lastName || !email || !password) {
         return res.status(400).json({
@@ -169,5 +176,5 @@ export const authController = {
  * @returns {String} - The generated JWT token.
  */
 const generateToken = (payload) => {
-  return jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: "1d" });
+  return jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: "1d" });
 };

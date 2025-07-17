@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const backendUrl = "http://localhost:5000/api/user/auth";
+const backendUrl = "http://localhost:5001/api/user/auth";
 
 export const login = createAsyncThunk(
   "auth/login",
@@ -43,6 +43,7 @@ export const signUp = createAsyncThunk(
         { firstName, lastName, email, password },
         config
       );
+      console.log("Data received from signUp:", data);
       return data;
     } catch (error) {
       if (error.response && error.response.data.message) {
