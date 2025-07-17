@@ -11,7 +11,7 @@ export const fetchPosts = createAsyncThunk(
   "post/fetchPosts",
   async (args, thunkApi) => {
     try {
-      const response = await axios.get("http://localhost:5001/api/posts");
+      const response = await axios.get("https://sase1.onrender.com/api/posts");
       return response.data;
     } catch (error) {
       return thunkApi.rejectWithValue(error);

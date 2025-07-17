@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const backendUrl = "http://localhost:5001/api/user/auth";
+const backendUrl = "https://sase1.onrender.com/api/user/auth";
 
 export const login = createAsyncThunk(
   "auth/login",
